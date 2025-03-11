@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "840d1ba4-f8f9-4dc4-9582-9cb5e5aaeb2e",
+		"name": "lumen-blog-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16853333",
+		"_collection_link": "https://crimson-zodiac-147038.postman.co/workspace/Sushil~4913f29a-6982-47cd-9633-0f5e31a29c52/collection/16853333-840d1ba4-f8f9-4dc4-9582-9cb5e5aaeb2e?action=share&source=collection_link&creator=16853333"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sujal45\",\r\n    \"email\": \"sujal26@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "sujal2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQxNjgyNzQ1LCJleHAiOjE3NDE2ODYzNDUsIm5iZiI6MTc0MTY4Mjc0NSwianRpIjoiU2xLSDBtQmplcEo5bDdCRyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.gxVrdpMUfdB76Gk8Yf-VemgSt8jXnhInKPQivmGhG8E"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{base_url}}/api/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog api",
+			"item": [
+				{
+					"name": "Create blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_title",
+									"value": "Sushil Blog one",
+									"type": "text"
+								},
+								{
+									"key": "post_description",
+									"value": "this is test blog :",
+									"type": "text"
+								},
+								{
+									"key": "post_content",
+									"value": "lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
+									"type": "text"
+								},
+								{
+									"key": "featured_image",
+									"type": "file",
+									"src": "/home/ashok/Pictures/Screenshots/Screenshot from 2025-02-28 13-56-36.png"
+								},
+								{
+									"key": "author_id",
+									"value": "101",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "space",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "published",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/blogs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get blogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/blogs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get blog by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/blogs/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Update blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_title",
+									"value": "updated blog comment",
+									"type": "text"
+								},
+								{
+									"key": "post_description",
+									"value": "sass",
+									"type": "text"
+								},
+								{
+									"key": "post_content",
+									"value": "asasasa",
+									"type": "text"
+								},
+								{
+									"key": "featured_image",
+									"type": "file",
+									"src": "/home/ashok/Pictures/Screenshots/Screenshot from 2025-02-12 17-22-53.png"
+								},
+								{
+									"key": "author_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "travel",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "published",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/blogs/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/api/blogs/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Like blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{base_url}}/api/blogs/2/like"
+					},
+					"response": []
+				},
+				{
+					"name": "Rate blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/blogs/4/rate"
+					},
+					"response": []
+				},
+				{
+					"name": "Comment on blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"Sushil commented on this\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/blogs/5/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQxNjgyNzQ1LCJleHAiOjE3NDE2ODYzNDUsIm5iZiI6MTc0MTY4Mjc0NSwianRpIjoiU2xLSDBtQmplcEo5bDdCRyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.gxVrdpMUfdB76Gk8Yf-VemgSt8jXnhInKPQivmGhG8E"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/api/comments/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Search blogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/blogs/search?search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"blogs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get archieved blogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/blogs/archived"
+					},
+					"response": []
+				},
+				{
+					"name": "Restore archieved blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzQxNjg1ODY1LCJleHAiOjE3NDE2ODk0NjUsIm5iZiI6MTc0MTY4NTg2NSwianRpIjoicmRoSjdoRjNhZVpqMHJVNCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XGJ5g1xIlMGpE_AK2H87l8BlU6-fg6mN2nEqH4lgcvs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{base_url}}/api/blogs/4/restore"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
